@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>MRREV</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+	<link rel="stylesheet" href="plugins/uikit-3.1.2/css/uikit.min.css" />
+	<link rel="stylesheet" href="2-css/fontawesome/css/all.css">
+	<link rel="stylesheet" href="2-css/animate.css">
+	<link rel="stylesheet" href="2-css/style.css">
+	<link rel="stylesheet" href="2-css/screen.css">
+	<link rel="stylesheet" href="3-js/slick/slick.css">
+	<link rel="stylesheet" href="3-js/slick/slick-theme.css">
+	<!--	<link rel="stylesheet" href="3-js/infinite_scroll/infinite_scroll.css">-->
+
+	<script src="3-js/jquery.min.js"></script>
+	<script src="3-js/slick/slick.min.js"></script>
+	<script src="plugins/uikit-3.1.2/js/uikit.min.js"></script>
+	<script src="plugins/uikit-3.1.2/js/uikit-icons.min.js"></script>
+	<script src="3-js/mnfixed.js"></script>
+	<script type="text/javascript" src="3-js/nicescroll/jquery.nicescroll.js"></script>
+	<script type="text/javascript" src="3-js/javascript.js"></script>
+	<script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.js"></script>
+
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap&subset=vietnamese" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700&display=swap&subset=vietnamese" rel="stylesheet">
+
+
+	<link rel="stylesheet" href="modules/product/product.css">
+	<script src="modules/product/product.js"></script>
+	<script src="3-js/ajax.js"></script>
+
+
+</head>
+
+<body>
+
+	<div id="mprevloading_hype_container" class="HYPE_document" style="margin:auto;position:relative;width:1440px;height:600px;overflow:hidden;">
+		<script type="text/javascript" charset="utf-8" src="3-js/mprev_loading.hyperesources/mprevloading_hype_generated_script.js?74651"></script>
+	</div>
+	<script>
+		var myWindow = $('#mprevloading_hype_container');
+		setTimeout(function() {
+			myWindow.css('display', 'none')
+		}, 3500);
+	</script>
+	<div class="mprev_content">
+		<!--	HEADER AND BANNER-->
+		<div class="uk-position-fixed header_menu" uk-sticky>
+			<div class="wrapper">
+				<nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+					<div class="uk-navbar-left">
+
+						<a href="" class="menu_icon" uk-icon="menu" uk-toggle="target: #offcanvas-slide"></a>
+					</div>
+					<div id="offcanvas-slide" uk-offcanvas="overlay: true">
+						<div class="uk-offcanvas-bar">
+
+							<button class="uk-offcanvas-close" type="button" uk-close></button>
+
+							<ul class="uk-list menu_list">
+								<li><a href="index.html">Trang chủ</a></li>
+								<li><a href="gioi-thieu.html">Về chúng tôi</a></li>
+								<li><a href="san-pham.html">Sản phẩm</a></li>
+								<li><a href="dich-vu.html">Dịch vụ</a></li>
+							</ul>
+
+						</div>
+					</div>
+					<div class="uk-navbar-center">
+						<div class="logo">
+							<img src="4-images/logo-bw.png" alt="">
+						</div>
+					</div>
+					<div class="uk-navbar-right">
+						<div class="cart">
+							<a href="">
+								<i class="fal fa-shopping-cart"></i>
+								<span>1</span>
+							</a>
+						</div>
+						<div class="lang">
+							<a href="">English</a>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<div class="banner">
+			<div class="item">
+				<div class="img">
+					<img src="4-images/banner-header.jpg" alt="">
+				</div>
+			</div>
+
+
+		</div>
+
+		<!--	HEADER AND BANNER-->
+		<!--	PRODUCT-->
+		<div class="uk-width-expand@m p2">
+
+			<div class="box_search">
+				<div class="wrapper">
+					<div class="title">
+						<h2>Chọn dòng xe</h2>
+					</div>
+					<div class="child_box_search" uk-grid>
+						<div class="col">
+							<span class="custom-dropdown">
+								<select name="cat_id_p" id="cat_id_p" onchange="getType(this.value);">
+									<option value="-1">--- Chon loại sản phẩm ---</option>
+									<option value="1">Chảng ba</option>
+									<option value="2">Dĩa</option>
+
+								</select>
+							</span>
+						</div>
+
+						<div class="col">
+							<span class="custom-dropdown">
+								<select name="cat_id_c" id="cat_id_c" onchange="getCat(this.value);">
+									<option>BMW</option>
+									<option>Ducati</option>
+									<option>Yamaha</option>
+
+								</select>
+							</span>
+						</div>
+						<div class="col">
+
+							<form class="uk-search uk-search-default">
+								<button class="uk-search-icon-flip" uk-search-icon></button>
+								<input class="uk-search-input" name="keywords" id="keywords" type="search" placeholder="Search...">
+							</form>
+
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+
+		</div>
+		<section class="product">
+			<div class="wrapper">
+				<div class="uk-text-center" uk-grid>
+					<div class="uk-width-expand@m p1">
+						<div class="box_product">
+							<div class="title">
+
+								<h2>
+
+									SẢN PHẨM CỦA MPREV
+
+								</h2>
+
+							</div>
+							<div class="content" id="">
+								<div class="loading_product"><span uk-spinner="ratio: 4.5"></span></div>
+								<div class="uk-child-width-1-2 uk-text-center container_product" uk-grid id="results">
+									<div class="item animated" rel="yamaha" data-type="1">
+										<div class="product_box">
+											<div class="img">
+												<a class="a_img" href="san-pham-chi-tiet.html">
+													<img src="4-images/product/product1.jpg" alt="">
+												</a>
+
+												<div class="i_tools">
+													<ul>
+														<li><a href="san-pham-chi-tiet.html"><i class="fal fa-search"></i></a></li>
+														<li><a href="#modal-center" uk-toggle><i class="fal fa-eye"></i></a></li>
+														<li><a href="gio-hang-1.html"><i class="fal fa-shopping-cart"></i></a></li>
+													</ul>
+												</div>
+
+
+												<div id="modal-center" class="uk-modal-container product_mod" uk-modal>
+													<div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+
+														<button class="uk-modal-close-default" type="button" uk-close></button>
+
+														<div class="uk-grid-collapse uk-child-width-1-2@s" uk-grid>
+															<div class="uk-position-relative uk-visible-toggle uk-light " tabindex="-1" uk-slideshow>
+
+																<ul class="uk-slideshow-items">
+																	<li>
+																		<img src="4-images/product/product1.jpg" alt="" uk-cover>
+																	</li>
+																	<li>
+																		<img src="4-images/product/product2.jpg" alt="" uk-cover>
+																	</li>
+																	<li>
+																		<img src="4-images/product/product3.jpg" alt="" uk-cover>
+																	</li>
+																</ul>
+
+																<a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+																<a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+
+
+															</div>
+															<div class="uk-padding-small product_modal_param">
+																<h3>Dĩa Thép MT-03</h3>
+																<div class="price">
+																	1.500.000 VND
+																</div>
+																<div class="param">
+																	<h6>THÔNG SỐ KỸ THUẬT</h6>
+																	<ul>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																	</ul>
+																</div>
+																<div class="box_btn">
+																	<a class="uk-button uk-button-default add_cart" href="">THÊM VÀO GIỎ HÀNG</a>
+																	<a href="gio-hang-1.html" class="uk-button uk-button-default color_m">Mua Ngay</a>
+																</div>
+
+															</div>
+														</div>
+
+													</div>
+												</div>
+											</div>
+											<div class="i_title">
+												<h3><a href="san-pham-chi-tiet.html">Dĩa Thép MT-03</a></h3>
+											</div>
+											<div class="i_price">
+												1.500.000 VND
+											</div>
+										</div>
+
+
+									</div>
+									<div class="item animated" rel="bmw" data-type="1">
+										<div class="product_box">
+											<div class="img">
+												<a class="a_img" href="san-pham-chi-tiet.html">
+													<img src="4-images/product/product2.jpg" alt="">
+												</a>
+
+												<div class="i_tools">
+													<ul>
+														<li><a href="san-pham-chi-tiet.html"><i class="fal fa-search"></i></a></li>
+														<li><a href="#modal-center" uk-toggle><i class="fal fa-eye"></i></a></li>
+														<li><a href="gio-hang-1.html"><i class="fal fa-shopping-cart"></i></a></li>
+													</ul>
+												</div>
+
+
+												<div id="modal-center" class="uk-modal-container product_mod" uk-modal>
+													<div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+
+														<button class="uk-modal-close-default" type="button" uk-close></button>
+
+														<div class="uk-grid-collapse uk-child-width-1-2@s" uk-grid>
+															<div class="uk-position-relative uk-visible-toggle uk-light " tabindex="-1" uk-slideshow>
+
+																<ul class="uk-slideshow-items">
+																	<li>
+																		<img src="4-images/product/product1.jpg" alt="" uk-cover>
+																	</li>
+																	<li>
+																		<img src="4-images/product/product2.jpg" alt="" uk-cover>
+																	</li>
+																	<li>
+																		<img src="4-images/product/product3.jpg" alt="" uk-cover>
+																	</li>
+																</ul>
+
+																<a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+																<a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+
+
+															</div>
+															<div class="uk-padding-small product_modal_param">
+																<h3>Dĩa Thép MT-03</h3>
+																<div class="price">
+																	1.500.000 VND
+																</div>
+																<div class="param">
+																	<h6>THÔNG SỐ KỸ THUẬT</h6>
+																	<ul>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																	</ul>
+																</div>
+																<div class="box_btn">
+																	<a class="uk-button uk-button-default add_cart" href="">THÊM VÀO GIỎ HÀNG</a>
+																	<a href="gio-hang-1.html" class="uk-button uk-button-default color_m">Mua Ngay</a>
+																</div>
+
+															</div>
+														</div>
+
+													</div>
+												</div>
+											</div>
+											<div class="i_title">
+												<h3><a href="san-pham-chi-tiet.html">Dĩa Thép MT-03</a></h3>
+											</div>
+											<div class="i_price">
+												1.500.000 VND
+											</div>
+										</div>
+
+
+									</div>
+									<div class="item animated" rel="yamaha" data-type="2">
+										<div class="product_box">
+											<div class="img">
+												<a class="a_img" href="san-pham-chi-tiet.html">
+													<img src="4-images/product/product3.jpg" alt="">
+												</a>
+
+												<div class="i_tools">
+													<ul>
+														<li><a href="san-pham-chi-tiet.html"><i class="fal fa-search"></i></a></li>
+														<li><a href="#modal-center" uk-toggle><i class="fal fa-eye"></i></a></li>
+														<li><a href="gio-hang-1.html"><i class="fal fa-shopping-cart"></i></a></li>
+													</ul>
+												</div>
+
+
+												<div id="modal-center" class="uk-modal-container product_mod" uk-modal>
+													<div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+
+														<button class="uk-modal-close-default" type="button" uk-close></button>
+
+														<div class="uk-grid-collapse uk-child-width-1-2@s" uk-grid>
+															<div class="uk-position-relative uk-visible-toggle uk-light " tabindex="-1" uk-slideshow>
+
+																<ul class="uk-slideshow-items">
+																	<li>
+																		<img src="4-images/product/product1.jpg" alt="" uk-cover>
+																	</li>
+																	<li>
+																		<img src="4-images/product/product2.jpg" alt="" uk-cover>
+																	</li>
+																	<li>
+																		<img src="4-images/product/product3.jpg" alt="" uk-cover>
+																	</li>
+																</ul>
+
+																<a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+																<a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+
+
+															</div>
+															<div class="uk-padding-small product_modal_param">
+																<h3>Dĩa Thép MT-03</h3>
+																<div class="price">
+																	1.500.000 VND
+																</div>
+																<div class="param">
+																	<h6>THÔNG SỐ KỸ THUẬT</h6>
+																	<ul>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																	</ul>
+																</div>
+																<div class="box_btn">
+																	<a class="uk-button uk-button-default add_cart" href="">THÊM VÀO GIỎ HÀNG</a>
+																	<a href="gio-hang-1.html" class="uk-button uk-button-default color_m">Mua Ngay</a>
+																</div>
+
+															</div>
+														</div>
+
+													</div>
+												</div>
+											</div>
+											<div class="i_title">
+												<h3><a href="san-pham-chi-tiet.html">Dĩa Thép MT-03</a></h3>
+											</div>
+											<div class="i_price">
+												1.500.000 VND
+											</div>
+										</div>
+
+
+									</div>
+									<div class="item animated" rel="ducati" data-type="1">
+										<div class="product_box">
+											<div class="img">
+												<a class="a_img" href="san-pham-chi-tiet.html">
+													<img src="4-images/product/product4.png" alt="">
+												</a>
+
+												<div class="i_tools">
+													<ul>
+														<li><a href="san-pham-chi-tiet.html"><i class="fal fa-search"></i></a></li>
+														<li><a href="#modal-center" uk-toggle><i class="fal fa-eye"></i></a></li>
+														<li><a href="gio-hang-1.html"><i class="fal fa-shopping-cart"></i></a></li>
+													</ul>
+												</div>
+
+
+												<div id="modal-center" class="uk-modal-container product_mod" uk-modal>
+													<div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+
+														<button class="uk-modal-close-default" type="button" uk-close></button>
+
+														<div class="uk-grid-collapse uk-child-width-1-2@s" uk-grid>
+															<div class="uk-position-relative uk-visible-toggle uk-light " tabindex="-1" uk-slideshow>
+
+																<ul class="uk-slideshow-items">
+																	<li>
+																		<img src="4-images/product/product1.jpg" alt="" uk-cover>
+																	</li>
+																	<li>
+																		<img src="4-images/product/product2.jpg" alt="" uk-cover>
+																	</li>
+																	<li>
+																		<img src="4-images/product/product3.jpg" alt="" uk-cover>
+																	</li>
+																</ul>
+
+																<a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+																<a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+
+
+															</div>
+															<div class="uk-padding-small product_modal_param">
+																<h3>Dĩa Thép MT-03</h3>
+																<div class="price">
+																	1.500.000 VND
+																</div>
+																<div class="param">
+																	<h6>THÔNG SỐ KỸ THUẬT</h6>
+																	<ul>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																	</ul>
+																</div>
+																<div class="box_btn">
+																	<a class="uk-button uk-button-default add_cart" href="">THÊM VÀO GIỎ HÀNG</a>
+																	<a href="gio-hang-1.html" class="uk-button uk-button-default color_m">Mua Ngay</a>
+																</div>
+
+															</div>
+														</div>
+
+													</div>
+												</div>
+											</div>
+											<div class="i_title">
+												<h3><a href="san-pham-chi-tiet.html">Dĩa Thép MT-03</a></h3>
+											</div>
+											<div class="i_price">
+												1.500.000 VND
+											</div>
+										</div>
+
+
+									</div>
+									<div class="item animated" rel="yamaha" data-type="1">
+										<div class="product_box">
+											<div class="img">
+												<a class="a_img" href="san-pham-chi-tiet.html">
+													<img src="4-images/product/product1.jpg" alt="">
+												</a>
+
+												<div class="i_tools">
+													<ul>
+														<li><a href="san-pham-chi-tiet.html"><i class="fal fa-search"></i></a></li>
+														<li><a href="#modal-center" uk-toggle><i class="fal fa-eye"></i></a></li>
+														<li><a href="gio-hang-1.html"><i class="fal fa-shopping-cart"></i></a></li>
+													</ul>
+												</div>
+
+
+												<div id="modal-center" class="uk-modal-container product_mod" uk-modal>
+													<div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+
+														<button class="uk-modal-close-default" type="button" uk-close></button>
+
+														<div class="uk-grid-collapse uk-child-width-1-2@s" uk-grid>
+															<div class="uk-position-relative uk-visible-toggle uk-light " tabindex="-1" uk-slideshow>
+
+																<ul class="uk-slideshow-items">
+																	<li>
+																		<img src="4-images/product/product1.jpg" alt="" uk-cover>
+																	</li>
+																	<li>
+																		<img src="4-images/product/product2.jpg" alt="" uk-cover>
+																	</li>
+																	<li>
+																		<img src="4-images/product/product3.jpg" alt="" uk-cover>
+																	</li>
+																</ul>
+
+																<a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+																<a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+
+
+															</div>
+															<div class="uk-padding-small product_modal_param">
+																<h3>Dĩa Thép MT-03</h3>
+																<div class="price">
+																	1.500.000 VND
+																</div>
+																<div class="param">
+																	<h6>THÔNG SỐ KỸ THUẬT</h6>
+																	<ul>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																	</ul>
+																</div>
+																<div class="box_btn">
+																	<a class="uk-button uk-button-default add_cart" href="san-pham-chi-tiet.html">THÊM VÀO GIỎ HÀNG</a>
+																	<a href="gio-hang-1.html" class="uk-button uk-button-default color_m">Mua Ngay</a>
+																</div>
+
+															</div>
+														</div>
+
+													</div>
+												</div>
+											</div>
+											<div class="i_title">
+												<h3><a href="">Dĩa Thép MT-03</a></h3>
+											</div>
+											<div class="i_price">
+												1.500.000 VND
+											</div>
+										</div>
+
+
+									</div>
+									<div class="item animated" rel="ducati" data-type="2">
+										<div class="product_box">
+											<div class="img">
+												<a class="a_img" href="san-pham-chi-tiet.html">
+													<img src="4-images/product/product2.jpg" alt="">
+												</a>
+
+												<div class="i_tools">
+													<ul>
+														<li><a href="san-pham-chi-tiet.html"><i class="fal fa-search"></i></a></li>
+														<li><a href="#modal-center" uk-toggle><i class="fal fa-eye"></i></a></li>
+														<li><a href="gio-hang-1.html"><i class="fal fa-shopping-cart"></i></a></li>
+													</ul>
+												</div>
+
+
+												<div id="modal-center" class="uk-modal-container product_mod" uk-modal>
+													<div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+
+														<button class="uk-modal-close-default" type="button" uk-close></button>
+
+														<div class="uk-grid-collapse uk-child-width-1-2@s" uk-grid>
+															<div class="uk-position-relative uk-visible-toggle uk-light " tabindex="-1" uk-slideshow>
+
+																<ul class="uk-slideshow-items">
+																	<li>
+																		<img src="4-images/product/product1.jpg" alt="" uk-cover>
+																	</li>
+																	<li>
+																		<img src="4-images/product/product2.jpg" alt="" uk-cover>
+																	</li>
+																	<li>
+																		<img src="4-images/product/product3.jpg" alt="" uk-cover>
+																	</li>
+																</ul>
+
+																<a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+																<a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+
+
+															</div>
+															<div class="uk-padding-small product_modal_param">
+																<h3>Dĩa Thép MT-03</h3>
+																<div class="price">
+																	1.500.000 VND
+																</div>
+																<div class="param">
+																	<h6>THÔNG SỐ KỸ THUẬT</h6>
+																	<ul>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																	</ul>
+																</div>
+																<div class="box_btn">
+																	<a class="uk-button uk-button-default add_cart" href="">THÊM VÀO GIỎ HÀNG</a>
+																	<a href="gio-hang-1.html" class="uk-button uk-button-default color_m">Mua Ngay</a>
+																</div>
+
+															</div>
+														</div>
+
+													</div>
+												</div>
+											</div>
+											<div class="i_title">
+												<h3><a href="san-pham-chi-tiet.html">Dĩa Thép MT-03</a></h3>
+											</div>
+											<div class="i_price">
+												1.500.000 VND
+											</div>
+										</div>
+
+
+									</div>
+									<div class="item animated" rel="yamaha" data-type="2">
+										<div class="product_box">
+											<div class="img">
+												<a class="a_img" href="san-pham-chi-tiet.html">
+													<img src="4-images/product/product3.jpg" alt="">
+												</a>
+
+												<div class="i_tools">
+													<ul>
+														<li><a href="san-pham-chi-tiet.html"><i class="fal fa-search"></i></a></li>
+														<li><a href="#modal-center" uk-toggle><i class="fal fa-eye"></i></a></li>
+														<li><a href="gio-hang-1.html"><i class="fal fa-shopping-cart"></i></a></li>
+													</ul>
+												</div>
+
+
+												<div id="modal-center" class="uk-modal-container product_mod" uk-modal>
+													<div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+
+														<button class="uk-modal-close-default" type="button" uk-close></button>
+
+														<div class="uk-grid-collapse uk-child-width-1-2@s" uk-grid>
+															<div class="uk-position-relative uk-visible-toggle uk-light " tabindex="-1" uk-slideshow>
+
+																<ul class="uk-slideshow-items">
+																	<li>
+																		<img src="4-images/product/product1.jpg" alt="" uk-cover>
+																	</li>
+																	<li>
+																		<img src="4-images/product/product2.jpg" alt="" uk-cover>
+																	</li>
+																	<li>
+																		<img src="4-images/product/product3.jpg" alt="" uk-cover>
+																	</li>
+																</ul>
+
+																<a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+																<a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+
+
+															</div>
+															<div class="uk-padding-small product_modal_param">
+																<h3>Dĩa Thép MT-03</h3>
+																<div class="price">
+																	1.500.000 VND
+																</div>
+																<div class="param">
+																	<h6>THÔNG SỐ KỸ THUẬT</h6>
+																	<ul>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																	</ul>
+																</div>
+																<div class="box_btn">
+																	<a class="uk-button uk-button-default add_cart" href="">THÊM VÀO GIỎ HÀNG</a>
+																	<a href="gio-hang-1.html" class="uk-button uk-button-default color_m">Mua Ngay</a>
+																</div>
+
+															</div>
+														</div>
+
+													</div>
+												</div>
+											</div>
+											<div class="i_title">
+												<h3><a href="san-pham-chi-tiet.html">Dĩa Thép MT-03</a></h3>
+											</div>
+											<div class="i_price">
+												1.500.000 VND
+											</div>
+										</div>
+
+
+									</div>
+									<div class="item animated" rel="yamaha" data-type="2">
+										<div class="product_box">
+											<div class="img">
+												<a class="a_img" href="">
+													<img src="4-images/product/product4.png" alt="">
+												</a>
+
+												<div class="i_tools">
+													<ul>
+														<li><a href=""><i class="fal fa-search"></i></a></li>
+														<li><a href="#modal-center" uk-toggle><i class="fal fa-eye"></i></a></li>
+														<li><a href=""><i class="fal fa-shopping-cart"></i></a></li>
+													</ul>
+												</div>
+
+
+												<div id="modal-center" class="uk-modal-container product_mod" uk-modal>
+													<div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+
+														<button class="uk-modal-close-default" type="button" uk-close></button>
+
+														<div class="uk-grid-collapse uk-child-width-1-2@s" uk-grid>
+															<div class="uk-position-relative uk-visible-toggle uk-light " tabindex="-1" uk-slideshow>
+
+																<ul class="uk-slideshow-items">
+																	<li>
+																		<img src="4-images/product/product1.jpg" alt="" uk-cover>
+																	</li>
+																	<li>
+																		<img src="4-images/product/product2.jpg" alt="" uk-cover>
+																	</li>
+																	<li>
+																		<img src="4-images/product/product3.jpg" alt="" uk-cover>
+																	</li>
+																</ul>
+
+																<a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+																<a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+
+
+															</div>
+															<div class="uk-padding-small product_modal_param">
+																<h3>Dĩa Thép MT-03</h3>
+																<div class="price">
+																	1.500.000 VND
+																</div>
+																<div class="param">
+																	<h6>THÔNG SỐ KỸ THUẬT</h6>
+																	<ul>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																		<li>Thông số 1</li>
+																	</ul>
+																</div>
+																<div class="box_btn">
+																	<a class="uk-button uk-button-default add_cart" href="">THÊM VÀO GIỎ HÀNG</a>
+																	<a href="gio-hang-1.html" class="uk-button uk-button-default color_m">Mua Ngay</a>
+																</div>
+
+															</div>
+														</div>
+
+													</div>
+												</div>
+											</div>
+											<div class="i_title">
+												<h3><a href="san-pham-chi-tiet.html">Dĩa Thép MT-03</a></h3>
+											</div>
+											<div class="i_price">
+												1.500.000 VND
+											</div>
+										</div>
+
+
+									</div>
+
+								</div>
+							</div>
+
+							<div class="page-load-status">
+								<div class="loader-ellips infinite-scroll-request">
+									<span class="loader-ellips__dot"></span>
+									<span class="loader-ellips__dot"></span>
+									<span class="loader-ellips__dot"></span>
+									<span class="loader-ellips__dot"></span>
+								</div>
+								<p class="infinite-scroll-last">End of content</p>
+								<p class="infinite-scroll-error">No more pages to load</p>
+							</div>
+							<p><button class="view-more-button">XEM THÊM</button></p>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+			<div id="limit"></div>
+		</section>
+		<!--	PRODUCT-->
+
+
+		<!--		PARALLAX-->
+		<div class="uk-height-large parallax_mprev uk-background-cover uk-light uk-flex" uk-parallax="bgy: -200" style="background-image: url('4-images/parallax.jpg');">
+
+			<h4 class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">HÃY VÌ ĐAM MÊ</h4>
+
+		</div>
+		<!--PARALLAX-->
+
+		<!--FOOTER-->
+		<div class="footer">
+			<div class="wrapper">
+				<div class="uk-text-left info_footer" uk-grid>
+					<div class="uk-width-1-3@m">
+						<div class="title_f">
+							ĐỪNG CHỜ ĐỢI,<br> HÃY LIÊN HỆ VỚI <span>MPREV</span>
+						</div>
+					</div>
+					<div class="uk-width-expand@m" uk-grid>
+						<div class="uk-width-1-2@s">
+							<div class="info_store ">
+								<h5>CỬA HÀNG M-REV SPROCKET</h5>
+								<ul>
+									<li><span>Địa chỉ: </span>482 Nơ Trang Long, Bình Thạnh, TP.HCM.</li>
+									<li><span>Điện thoại: </span>09430490343</li>
+									<li><span>Email: </span>mprev@gmail.com</li>
+									<li><span>Website: </span>mprev.com.vn</li>
+								</ul>
+							</div>
+
+
+						</div>
+						<div class="uk-width-1-2@s">
+							<div class="info_store">
+								<h5>LINK NHANH</h5>
+								<ul>
+									<li><a href="gioi-thieu.html">Về chúng tôi</a></li>
+									<li><a href="dich-vu.html">Dịch vụ</a></li>
+									<li><a href="san-pham.html">Sản phẩm</a></li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="box_copyright">
+				<div class="wrapper">
+					<div class="uk-text-left " uk-grid>
+
+						<div class="uk-width-1-3@m copyright">
+							Copyright © 2019 MPREV. All Rights Reserved
+						</div>
+						<div class="uk-width-1-3@m">
+							<div class="logo_f uk-text-center">
+								<img src="4-images/logo-bw.png" alt="">
+							</div>
+						</div>
+						<div class="uk-width-1-3@m uk-text-right">
+
+							<ul class="social uk-text-right">
+								<li>
+									<a href=""><i class="fab fa-facebook"></i></a>
+								</li>
+								<li>
+									<a href=""><i class="fab fa-instagram"></i></a>
+								</li>
+								<li>
+									<a href=""><i class="fab fa-youtube-square"></i></a>
+								</li>
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+		<!--FOOTER-->
+
+
+	</div>
+
+
+
+</body>
+
+</html>

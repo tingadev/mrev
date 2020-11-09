@@ -1,0 +1,129 @@
+/*===================================BEGIN : MAP CONTACT===================================*/
+.map-contact {
+    position: relative;
+}
+
+.map-contact .list-tab {
+    margin-bottom: 15px;
+}
+
+.map-contact .list-tab:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.map-contact .list-tab > li {
+    float: left;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+.map-contact .list-tab > li > a {
+    border-radius: 0;
+    font-size: 14px;
+    line-height: 22px;
+    color: #555555;
+    font-weight: 500;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fafafa;
+    border: 1px solid #ebebeb;
+}
+
+.map-contact .list-tab > li.active > a,
+.map-contact .list-tab > li.active > a:focus,
+.map-contact .list-tab > li.active > a:hover {
+    color: var(--ex_color);
+    background-color: var(--m_color);
+}
+
+.map-contact .tab-content iframe {
+    width: 100% !important;
+}
+
+.map-contact .mc-tab {
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 14px 20px;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 10px;
+    background: #221714;
+    font-weight: 600;
+}
+
+.map-contact .mc-tab:before {
+    content: "\f107";
+    font-family: FontAwesome;
+    right: 20px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.contact_page{
+    background-attachment: fixed !important;
+    background-position: center !important;; 
+    background-repeat: no-repeat !important;;
+    background-size: cover !important;
+}
+
+.contact_container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    color: var(--ex_color);
+}
+.contact_container h1 span{
+    color: var(--m_color);
+}
+.contact_info{
+    width: 100%;
+    text-align: center;
+}
+.address {
+    margin-top: 10px;
+}
+.address i{
+    font-size: 30px;
+}
+.contact_info .before{
+    
+}
+.contact_info .before h3{
+    position: relative;
+    padding-left: 30px;
+    display: inline-block;
+}
+.contact_info .before h3:before{
+    position: absolute;
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 300;
+    color: var(--m_color);
+    font-size: 20px;
+    top: 3px;
+    left: 0;
+}
+.contact_info .phone.before h3:before{
+    content: "\f095";
+}
+.contact_info .email.before h3:before{
+    content: "\f0e0";
+}
+.contact_info .website.before h3:before{
+    content: "\f0ac";
+}
+
+.map_content{
+    padding-bottom: 30px;
+}
+
+

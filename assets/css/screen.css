@@ -1,0 +1,173 @@
+@media only screen and (max-width: 1200px) {
+
+    /*BANNER*/
+
+    .banner-img .slick-dots {
+        padding-left: 20px;
+    }
+
+    .banner-img .item .slogan h2 {
+        font-weight: 200;
+        font-size: 40px;
+        color: white;
+    }
+
+    .banner-img .item .slogan h3 {
+        font-weight: 200;
+        font-size: 20px;
+        color: white;
+        padding: 0;
+        margin: 0;
+    }
+
+    /*BANNER*/
+}
+
+@media only screen and (max-width: 768px) {
+
+    /*BANNER*/
+
+
+    .banner-img img {
+
+        max-width: initial;
+        width: auto;
+        
+        vertical-align: middle;
+
+    }
+
+    /*BANNER*/
+
+    /*    TITLE*/
+    .t-title h3 {
+        font-size: 30px;
+
+    }
+
+    .t-title h4 {
+
+        margin-top: 5px;
+        font-size: 16px;
+        font-weight: 300;
+        color: #666666;
+    }
+
+    .t-l-title h1 {
+
+        display: none;
+    }
+
+    .t-container .active.title {
+        width: 450px;
+        height: 130px;
+    }
+
+    .t-container .title {
+        width: 170px;
+        height: 65px;
+    }
+
+    .t-container .title h3 {
+        padding-top: 20px;
+        font-weight: 200;
+        font-size: 27px;
+        opacity: 0;
+        transition: 1s ease;
+        transition-delay: 1s;
+    }
+
+    .t-container .active.title p {
+        padding: 0px 15px;
+    }
+
+    .t-container .title p {
+        font-weight: 300;
+        font-size: 13px;
+
+        color: #aaaaaa;
+        margin-top: 15px;
+        opacity: 0;
+        transition: 1s ease;
+        transition-delay: 1s;
+    }
+
+    /*    TITLE*/
+
+    /*SERVICES*/
+    .services .row .item .t-p p {
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    .services .row .item .t-p {}
+
+    /*SERVICES*/
+
+
+}
+
+@media only screen and (max-width: 650px) {
+    .services .item.col-50 {
+        padding-right: 0px;
+        padding-left: 0px;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    div.row.row-s {
+
+        margin-bottom: 0px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+.banner-img .item .slogan{
+    display: none;
+}
+    .section {
+        padding: 10px 0;
+        position: relative;
+    }
+
+    /*    TITLE*/
+
+
+    .t-container .active.title {
+        width: 340px;
+        height: 130px;
+    }
+
+    .t-container .title {
+        width: 170px;
+        height: 65px;
+    }
+
+    .t-container .title h3 {
+        padding-top: 5px;
+        font-weight: 200;
+        font-size: 27px;
+        opacity: 0;
+        transition: 1s ease;
+        transition-delay: 1s;
+    }
+
+    .t-container .active.title p {
+        padding: 0px 15px;
+    }
+
+    .t-container .title p {
+        font-weight: 300;
+        font-size: 13px;
+
+        color: #aaaaaa;
+        margin-top: 15px;
+        opacity: 0;
+        transition: 1s ease;
+        transition-delay: 1s;
+    }
+
+    /*    TITLE*/
+
+}

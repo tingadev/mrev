@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>MRREV</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+	<link rel="stylesheet" href="plugins/uikit-3.1.2/css/uikit.min.css" />
+	<link rel="stylesheet" href="2-css/fontawesome/css/all.css">
+	<link rel="stylesheet" href="2-css/animate.css">
+	<link rel="stylesheet" href="2-css/style.css">
+	<link rel="stylesheet" href="2-css/screen.css">
+	<link rel="stylesheet" href="3-js/slick/slick.css">
+	<link rel="stylesheet" href="3-js/slick/slick-theme.css">
+	<link rel="stylesheet" href="3-js/fancybox/jquery.fancybox.min.css">
+
+	<!--	<link rel="stylesheet" href="3-js/infinite_scroll/infinite_scroll.css">-->
+
+	<script src="3-js/jquery.min.js"></script>
+	<script src="3-js/slick/slick.min.js"></script>
+	<script src="plugins/uikit-3.1.2/js/uikit.min.js"></script>
+	<script src="plugins/uikit-3.1.2/js/uikit-icons.min.js"></script>
+	<script src="3-js/mnfixed.js"></script>
+	<script src="3-js/fancybox/jquery.fancybox.min.js"></script>
+	<script type="text/javascript" src="3-js/nicescroll/jquery.nicescroll.js"></script>
+	<script type="text/javascript" src="3-js/javascript.js"></script>
+	<script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.js"></script>
+
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap&subset=vietnamese" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700&display=swap&subset=vietnamese" rel="stylesheet">
+
+
+	<link rel="stylesheet" href="modules/product/product.css">
+	<link href="3-js/slick/slick.css" type="text/css" rel="stylesheet" />
+	<link href="3-js/slick/slick-theme.css" type="text/css" rel="stylesheet" />
+	<script src="modules/product/product.js"></script>
+	<script type="text/javascript" src="3-js/slick/slick.js"></script>
+	<script src="3-js/ajax.js"></script>
+
+
+</head>
+
+<body>
+
+	<div id="mprevloading_hype_container" class="HYPE_document" style="margin:auto;position:relative;width:1440px;height:600px;overflow:hidden;">
+		<script type="text/javascript" charset="utf-8" src="3-js/mprev_loading.hyperesources/mprevloading_hype_generated_script.js?74651"></script>
+	</div>
+	<script>
+		var myWindow = $('#mprevloading_hype_container');
+		setTimeout(function() {
+			myWindow.css('display', 'none')
+		}, 3500);
+	</script>
+	<div class="mprev_content">
+		<!--	HEADER AND BANNER-->
+		<div class="uk-position-fixed header_menu" uk-sticky>
+			<div class="wrapper">
+				<nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+					<div class="uk-navbar-left">
+
+						<a href="" class="menu_icon" uk-icon="menu" uk-toggle="target: #offcanvas-slide"></a>
+					</div>
+					<div id="offcanvas-slide" uk-offcanvas="overlay: true">
+						<div class="uk-offcanvas-bar">
+
+							<button class="uk-offcanvas-close" type="button" uk-close></button>
+
+							<ul class="uk-list menu_list">
+								<li><a href="index.html">Trang chủ</a></li>
+								<li><a href="gioi-thieu.html">Về chúng tôi</a></li>
+								<li><a href="san-pham.html">Sản phẩm</a></li>
+								<li><a href="dich-vu.html">Dịch vụ</a></li>
+							</ul>
+
+						</div>
+					</div>
+					<div class="uk-navbar-center">
+						<div class="logo">
+							<img src="4-images/logo-bw.png" alt="">
+						</div>
+					</div>
+					<div class="uk-navbar-right">
+						<div class="cart">
+							<a href="">
+								<i class="fal fa-shopping-cart"></i>
+								<span>1</span>
+							</a>
+						</div>
+						<div class="lang">
+							<a href="">English</a>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<div class="banner">
+			<div class="item">
+				<div class="img">
+					<img src="4-images/banner-header.jpg" alt="">
+				</div>
+			</div>
+
+
+		</div>
+
+		<!--	HEADER AND BANNER-->
+		<!--	PRODUCT-->
+		<!--
+		<div class="uk-width-expand@m p2">
+
+			<div class="box_search">
+				<div class="wrapper">
+					<div class="title">
+						<h2>Chọn dòng xe</h2>
+					</div>
+					<div class="child_box_search" uk-grid>
+						<div class="col">
+							<span class="custom-dropdown">
+								<select name="cat_id_p" id="cat_id_p" onchange="getType(this.value);">
+									<option value="-1">--- Chon loại sản phẩm ---</option>
+									<option value="1">Chảng ba</option>
+									<option value="2">Dĩa</option>
+
+								</select>
+							</span>
+						</div>
+
+						<div class="col">
+							<span class="custom-dropdown">
+								<select name="cat_id_c" id="cat_id_c" onchange="getCat(this.value);">
+									<option>BMW</option>
+									<option>Ducati</option>
+									<option>Yamaha</option>
+
+								</select>
+							</span>
+						</div>
+						<div class="col">
+
+							<form class="uk-search uk-search-default">
+								<button class="uk-search-icon-flip" uk-search-icon></button>
+								<input class="uk-search-input" name="keywords" id="keywords" type="search" placeholder="Search...">
+							</form>
+
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+
+		</div>
+-->
+		<div class="wrapCont">
+			<div class="wrapper">
+				<div class="box_mid">
+
+					<div class="mid-content">
+
+						<!-- PRODUCT CONTAINER -->
+						<div class="l-wrapper">
+							<div class="productWrap">
+								<div class="row">
+									<div class="col">
+										<div class="productThumbnail">
+											<div id="vnt-thumbnail-for">
+												<div class="item">
+													<div class="img"><a data-fancybox="fancyThumb" href="https://scontent.fsgn5-4.fna.fbcdn.net/v/t1.0-9/59896632_1249207715244811_9121830724985421824_o.jpg?_nc_cat=104&_nc_oc=AQlCz9Geqj-65zXkgeUNV6eWoDu3-2JGdfjkjR_Z7RgcVc_gAN8VE0MmhqGq2LqAQ0U&_nc_ht=scontent.fsgn5-4.fna&oh=4289a4e807b2cd067309cc2a62196356&oe=5D9F9F66"><img src="https://scontent.fsgn5-4.fna.fbcdn.net/v/t1.0-9/59896632_1249207715244811_9121830724985421824_o.jpg?_nc_cat=104&_nc_oc=AQlCz9Geqj-65zXkgeUNV6eWoDu3-2JGdfjkjR_Z7RgcVc_gAN8VE0MmhqGq2LqAQ0U&_nc_ht=scontent.fsgn5-4.fna&oh=4289a4e807b2cd067309cc2a62196356&oe=5D9F9F66" alt="" /></a></div>
+												</div>
+												<div class="item">
+													<div class="img"><a data-fancybox="fancyThumb" href="https://scontent.fsgn5-6.fna.fbcdn.net/v/t1.0-9/59954401_1249207741911475_409125815679188992_o.jpg?_nc_cat=106&_nc_oc=AQnFsGq9ym2FS6OlTWWstXoMwB3FkDGDktQSXVv_jw24u-KAnQx6HXuEVmbEjCpXrOs&_nc_ht=scontent.fsgn5-6.fna&oh=72bd999294b060a8de46e7e9bd0c6d1d&oe=5D9E77D8"><img src="https://scontent.fsgn5-6.fna.fbcdn.net/v/t1.0-9/59954401_1249207741911475_409125815679188992_o.jpg?_nc_cat=106&_nc_oc=AQnFsGq9ym2FS6OlTWWstXoMwB3FkDGDktQSXVv_jw24u-KAnQx6HXuEVmbEjCpXrOs&_nc_ht=scontent.fsgn5-6.fna&oh=72bd999294b060a8de46e7e9bd0c6d1d&oe=5D9E77D8" alt="" /></a></div>
+												</div>
+												<div class="item">
+													<div class="img"><a data-fancybox="fancyThumb" href="https://scontent.fsgn5-4.fna.fbcdn.net/v/t1.0-9/59700248_1249207691911480_7039284615973961728_o.jpg?_nc_cat=104&_nc_oc=AQnajps1YRJpiSMmilpnJY9brYAGwdieAbDnoJB2fYIFCjQtwptDU3r6MkhGX4SKF0Y&_nc_ht=scontent.fsgn5-4.fna&oh=1fb5bda1d2a3a2fb840c789aed0560b3&oe=5D65251E"><img src="https://scontent.fsgn5-4.fna.fbcdn.net/v/t1.0-9/59700248_1249207691911480_7039284615973961728_o.jpg?_nc_cat=104&_nc_oc=AQnajps1YRJpiSMmilpnJY9brYAGwdieAbDnoJB2fYIFCjQtwptDU3r6MkhGX4SKF0Y&_nc_ht=scontent.fsgn5-4.fna&oh=1fb5bda1d2a3a2fb840c789aed0560b3&oe=5D65251E" alt="" /></a></div>
+												</div>
+												<div class="item">
+													<div class="img"><a data-fancybox="fancyThumb" href="https://scontent.fsgn5-2.fna.fbcdn.net/v/t1.0-9/59606839_1249207808578135_2958471849710714880_o.jpg?_nc_cat=107&_nc_oc=AQme37xwHgFDZhR66XYhPcIctuS61gAiBSchAhUYpf1DXqz1aNsBACEOGIdFqh5uo4E&_nc_ht=scontent.fsgn5-2.fna&oh=64bd93b495fa0969bdcaa3a5fc582bc5&oe=5D6C28F2"><img src="https://scontent.fsgn5-2.fna.fbcdn.net/v/t1.0-9/59606839_1249207808578135_2958471849710714880_o.jpg?_nc_cat=107&_nc_oc=AQme37xwHgFDZhR66XYhPcIctuS61gAiBSchAhUYpf1DXqz1aNsBACEOGIdFqh5uo4E&_nc_ht=scontent.fsgn5-2.fna&oh=64bd93b495fa0969bdcaa3a5fc582bc5&oe=5D6C28F2" /></a></div>
+												</div>
+												<div class="item">
+													<div class="img"><a data-fancybox="fancyThumb" href="https://scontent.fsgn5-3.fna.fbcdn.net/v/t1.0-9/60148390_1249207831911466_547690381295222784_o.jpg?_nc_cat=110&_nc_oc=AQkV4eNFgVS2FOuLfCnogtV1VMNS0-8HQryKc6GCozf8pMXllN0w93xlcTPSds_Njps&_nc_ht=scontent.fsgn5-3.fna&oh=906a898a197b6390b57cd7764e53fe9d&oe=5D67C2E0"><img src="https://scontent.fsgn5-3.fna.fbcdn.net/v/t1.0-9/60148390_1249207831911466_547690381295222784_o.jpg?_nc_cat=110&_nc_oc=AQkV4eNFgVS2FOuLfCnogtV1VMNS0-8HQryKc6GCozf8pMXllN0w93xlcTPSds_Njps&_nc_ht=scontent.fsgn5-3.fna&oh=906a898a197b6390b57cd7764e53fe9d&oe=5D67C2E0" alt="" /></a></div>
+												</div>
+												<div class="item">
+													<div class="img"><a data-fancybox="fancyThumb" href="https://scontent.fsgn5-5.fna.fbcdn.net/v/t1.0-9/57437603_1249207855244797_5206820025813434368_o.jpg?_nc_cat=108&_nc_oc=AQlowWsuEqYAkDAoxLEXTOrfkyIlVILGEsVqpT5T660BefRHAtq4T3k7MurmMmQYKsk&_nc_ht=scontent.fsgn5-5.fna&oh=ae78372114f439922294b63247ed6ea7&oe=5D6ADA5C"><img src="https://scontent.fsgn5-5.fna.fbcdn.net/v/t1.0-9/57437603_1249207855244797_5206820025813434368_o.jpg?_nc_cat=108&_nc_oc=AQlowWsuEqYAkDAoxLEXTOrfkyIlVILGEsVqpT5T660BefRHAtq4T3k7MurmMmQYKsk&_nc_ht=scontent.fsgn5-5.fna&oh=ae78372114f439922294b63247ed6ea7&oe=5D6ADA5C" alt="" /></a></div>
+												</div>
+
+											</div>
+											<div id="vnt-thumbnail-nav">
+												<!--==IMAGES CROP RIGHT SIZE 80X80==-->
+												<div class="item">
+													<div class="img"><img src="https://scontent.fsgn5-4.fna.fbcdn.net/v/t1.0-9/59896632_1249207715244811_9121830724985421824_o.jpg?_nc_cat=104&_nc_oc=AQlCz9Geqj-65zXkgeUNV6eWoDu3-2JGdfjkjR_Z7RgcVc_gAN8VE0MmhqGq2LqAQ0U&_nc_ht=scontent.fsgn5-4.fna&oh=4289a4e807b2cd067309cc2a62196356&oe=5D9F9F66" alt="" width="80px" height="80px" /></div>
+												</div>
+												<div class="item">
+													<div class="img"><img src="https://scontent.fsgn5-6.fna.fbcdn.net/v/t1.0-9/59954401_1249207741911475_409125815679188992_o.jpg?_nc_cat=106&_nc_oc=AQnFsGq9ym2FS6OlTWWstXoMwB3FkDGDktQSXVv_jw24u-KAnQx6HXuEVmbEjCpXrOs&_nc_ht=scontent.fsgn5-6.fna&oh=72bd999294b060a8de46e7e9bd0c6d1d&oe=5D9E77D8" alt="" width="80px" height="80px" /></div>
+												</div>
+												<div class="item">
+													<div class="img"><img src="https://scontent.fsgn5-4.fna.fbcdn.net/v/t1.0-9/59700248_1249207691911480_7039284615973961728_o.jpg?_nc_cat=104&_nc_oc=AQnajps1YRJpiSMmilpnJY9brYAGwdieAbDnoJB2fYIFCjQtwptDU3r6MkhGX4SKF0Y&_nc_ht=scontent.fsgn5-4.fna&oh=1fb5bda1d2a3a2fb840c789aed0560b3&oe=5D65251E" alt="" width="80px" height="80px" /></div>
+												</div>
+												<div class="item">
+													<div class="img"><img src="https://scontent.fsgn5-2.fna.fbcdn.net/v/t1.0-9/59606839_1249207808578135_2958471849710714880_o.jpg?_nc_cat=107&_nc_oc=AQme37xwHgFDZhR66XYhPcIctuS61gAiBSchAhUYpf1DXqz1aNsBACEOGIdFqh5uo4E&_nc_ht=scontent.fsgn5-2.fna&oh=64bd93b495fa0969bdcaa3a5fc582bc5&oe=5D6C28F2" alt="" width="80px" height="80px" /></div>
+												</div>
+												<div class="item">
+													<div class="img"><img src="https://scontent.fsgn5-3.fna.fbcdn.net/v/t1.0-9/60148390_1249207831911466_547690381295222784_o.jpg?_nc_cat=110&_nc_oc=AQkV4eNFgVS2FOuLfCnogtV1VMNS0-8HQryKc6GCozf8pMXllN0w93xlcTPSds_Njps&_nc_ht=scontent.fsgn5-3.fna&oh=906a898a197b6390b57cd7764e53fe9d&oe=5D67C2E0" alt="" width="80px" height="80px" /></div>
+												</div>
+												<div class="item">
+													<div class="img"><img src="https://scontent.fsgn5-5.fna.fbcdn.net/v/t1.0-9/57437603_1249207855244797_5206820025813434368_o.jpg?_nc_cat=108&_nc_oc=AQlowWsuEqYAkDAoxLEXTOrfkyIlVILGEsVqpT5T660BefRHAtq4T3k7MurmMmQYKsk&_nc_ht=scontent.fsgn5-5.fna&oh=ae78372114f439922294b63247ed6ea7&oe=5D6ADA5C" alt="" width="80px" height="80px" /></div>
+												</div>
+
+											</div>
+										</div>
+
+									</div>
+									<div class="col">
+										<div class="productTitle">
+											<h1>Đĩa Tải Dành Cho Ducati Sử Dụng Hub 5 lỗ</h1>
+											<div class="bb-box-h-line-3"></div>
+										</div>
+										<div class="productDes">
+											<p>- Cắt CNC nguyên khối siêu chính xác..
+
+											</p>
+											<p>
+												- Tôi nhôm nhuộm màu kỹ thuật (Anodized)
+											</p>
+										</div>
+										<div class="price">
+											<p>Giá: <span class="num">3.350.000</span><span class="unit">đ</span></p>
+										</div>
+										<div class="productAttr">
+											<ul>
+												<li>
+													MÃ <span>SHW2992</span>
+												</li>
+												<li>
+													CHẤT LIỆU <span>Hợp kim nhôm nén AL7075-T651</span>
+												</li>
+												<li>
+													MÀU SẮC <span>Đen, đỏ, vàng, bạc, xám</span>
+												</li>
+												<li>
+													SỐ RĂNG <span>42T, 43T, 45T, 47T</span>
+												</li>
+												<li>
+													TÌNH TRẠNG <span class="ex"><i class="fas fa-check"></i> Còn hàng</span>
+												</li>
+											</ul>
+										</div>
+
+
+										<div class="productInfo bb">
+											<div class="productCart">
+												<div class="gridC">
+													<div class="colC1">
+														<div class="quantity">
+															<button type="button" class="btn-quan btn-down"><i class="fa fa-minus"></i></button>
+															<input type="text" value="1">
+															<button type="button" class="btn-quan btn-up"><i class="fa fa-plus"></i></button>
+															<div class="clear"></div>
+														</div>
+													</div>
+													<div class="colC2">
+														<button class="btn-sub"><span>THÊM VÀO GIỎ</span></button>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="productShare">
+											<ul>
+												<li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+												<li><a href=""><i class="fab fa-instagram"></i></a></li>
+												<li><a href=""><i class="fab fa-youtube-square"></i></a></li>
+												
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="clear"></div>
+							<div class="productContent">
+								<div class="title_tab">
+									<h5>
+										CHI TIẾT SẢN PHẨM
+									</h5>
+								</div>
+
+								<div class="tab-content ">
+									<div class="tab-pane active vnt-tab-content" id="tab1">
+										<div class="the-content desc">
+											<div class="boxProduct">
+
+												<p>
+													Thời gian sử dụng 32,000km trở lên.
+												</p>
+												<p>
+													Chính vì những đặc tính trên mà Driven Racing luôn được biker trên thế giới tin dùng hàng chục năm qua.
+												</p>
+
+												<div class="img">
+													<img src="https://scontent.fsgn5-5.fna.fbcdn.net/v/t1.0-9/57437603_1249207855244797_5206820025813434368_o.jpg?_nc_cat=108&_nc_oc=AQlowWsuEqYAkDAoxLEXTOrfkyIlVILGEsVqpT5T660BefRHAtq4T3k7MurmMmQYKsk&_nc_ht=scontent.fsgn5-5.fna&oh=ae78372114f439922294b63247ed6ea7&oe=5D6ADA5C" alt="">
+													<img src="https://scontent.fsgn5-6.fna.fbcdn.net/v/t1.0-9/59954401_1249207741911475_409125815679188992_o.jpg?_nc_cat=106&_nc_oc=AQnFsGq9ym2FS6OlTWWstXoMwB3FkDGDktQSXVv_jw24u-KAnQx6HXuEVmbEjCpXrOs&_nc_ht=scontent.fsgn5-6.fna&oh=72bd999294b060a8de46e7e9bd0c6d1d&oe=5D9E77D8" alt="">
+												</div>
+
+
+
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+
+						<!-- PRODUCT CONTAINER -->
+
+						<!--RECENT VIEW-->
+						<div class="l-wrapper">
+
+							<div class="recent-view">
+								<div class="r-title">
+									<h5>
+										SẢN PHẨM TƯƠNG ĐƯƠNG
+									</h5>
+								</div>
+
+								<div class="s-container" id="product-related">
+									<div class="s-box">
+										<div class="img">
+											<a class="a_img" href="san-pham-chi-tiet.html" alt=""><img src="4-images/product/product1.jpg" alt=""></a>
+											
+										</div>
+										<div class="i_title">
+												<h3><a href="">Dĩa Thép MT-03</a></h3>
+											</div>
+											<div class="i_price">
+												1.500.000 VND
+											</div>
+									</div>
+									<div class="s-box">
+										<div class="img">
+											<a class="a_img" href="san-pham-chi-tiet.html" alt=""><img src="4-images/product/product2.jpg" alt=""></a>
+											
+										</div>
+										<div class="i_title">
+												<h3><a href="">Dĩa Thép MT-03</a></h3>
+											</div>
+											<div class="i_price">
+												1.500.000 VND
+											</div>
+									</div>
+									<div class="s-box">
+										<div class="img">
+											<a class="a_img" href="san-pham-chi-tiet.html" alt=""><img src="4-images/product/product3.jpg" alt=""></a>
+											
+										</div>
+										<div class="i_title">
+											<h3><a href="">Dĩa Thép MT-03</a></h3>
+											</div>
+											<div class="i_price">
+												1.500.000 VND
+											</div>
+									</div>
+									<div class="s-box">
+										<div class="img">
+											<a class="a_img" href="san-pham-chi-tiet.html" alt=""><img src="4-images/product/product4.png" alt=""></a>
+											
+										</div>
+										<div class="i_title">
+												<h3><a href="">Dĩa Thép MT-03</a></h3>
+											</div>
+											<div class="i_price">
+												1.500.000 VND
+											</div>
+									</div>
+
+								</div>
+							</div>
+
+
+
+						</div>
+						<!--RECENT VIEW-->
+
+
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+
+
+
+
+		</div>
+		<!--	PRODUCT-->
+
+
+		<!--		PARALLAX-->
+		<div class="uk-height-large parallax_mprev uk-background-cover uk-light uk-flex" uk-parallax="bgy: -200" style="background-image: url('4-images/parallax.jpg');">
+
+			<h4 class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">HÃY VÌ ĐAM MÊ</h4>
+
+		</div>
+		<!--PARALLAX-->
+
+		<!--FOOTER-->
+		<div class="footer">
+			<div class="wrapper">
+				<div class="uk-text-left info_footer" uk-grid>
+					<div class="uk-width-1-3@m">
+						<div class="title_f">
+							ĐỪNG CHỜ ĐỢI,<br> HÃY LIÊN HỆ VỚI <span>MPREV</span>
+						</div>
+					</div>
+					<div class="uk-width-expand@m" uk-grid>
+						<div class="uk-width-1-2@s">
+							<div class="info_store ">
+								<h5>CỬA HÀNG M-REV SPROCKET</h5>
+								<ul>
+									<li><span>Địa chỉ: </span>482 Nơ Trang Long, Bình Thạnh, TP.HCM.</li>
+									<li><span>Điện thoại: </span>09430490343</li>
+									<li><span>Email: </span>mprev@gmail.com</li>
+									<li><span>Website: </span>mprev.com.vn</li>
+								</ul>
+							</div>
+
+
+						</div>
+						<div class="uk-width-1-2@s">
+							<div class="info_store">
+								<h5>LINK NHANH</h5>
+								<ul>
+									<li><a href="gioi-thieu.html">Về chúng tôi</a></li>
+									<li><a href="dich-vu.html">Dịch vụ</a></li>
+									<li><a href="san-pham.html">Sản phẩm</a></li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="box_copyright">
+				<div class="wrapper">
+					<div class="uk-text-left " uk-grid>
+
+						<div class="uk-width-1-3@m copyright">
+							Copyright © 2019 MPREV. All Rights Reserved
+						</div>
+						<div class="uk-width-1-3@m">
+							<div class="logo_f uk-text-center">
+								<img src="4-images/logo-bw.png" alt="">
+							</div>
+						</div>
+						<div class="uk-width-1-3@m uk-text-right">
+
+							<ul class="social uk-text-right">
+								<li>
+									<a href=""><i class="fab fa-facebook"></i></a>
+								</li>
+								<li>
+									<a href=""><i class="fab fa-instagram"></i></a>
+								</li>
+								<li>
+									<a href=""><i class="fab fa-youtube-square"></i></a>
+								</li>
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+		<!--FOOTER-->
+
+
+	</div>
+
+
+
+</body>
+
+</html>

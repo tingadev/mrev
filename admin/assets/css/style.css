@@ -1,0 +1,19 @@
+.box-img{
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 50px;
+}
+#uploadStatus ul{
+	padding-top: 30px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+#uploadStatus ul li{
+	flex: 0 0 20%;
+	list-style: none;
+	margin-left: 1%;
+	margin-right: 1%;
+		/*margin-left: 1%;
+		margin-right: 1%;*/
+}

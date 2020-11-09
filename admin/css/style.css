@@ -1,0 +1,130 @@
+#load-screen {
+background: url(../images/header-back.png);
+position: fixed;
+z-index: 10000;
+top:0px;
+width: 100%;
+height: 1600px;
+
+}
+a.btn{
+	background: #555555 !important;
+}
+#progress {
+	position:relative;
+     margin-left: 16px; 
+    margin-top: 10px;
+    width: 320px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #ffffff;
+    display: none;
+}
+#progress .bar_progress{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height:30px;
+	width: 0px;
+	background: white;
+	border-radius: 5px;
+	color: black;
+	transition: all 0.3s ease;
+}
+#progress .bar_text{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	color: #cd23b2;
+	transition: all 0.3s ease;
+}
+select{
+	background-color: #333333 !important;
+	color: white !important;
+	border : 1px solid #555555 !important;
+}
+.card-tasks{
+	height: auto !important;
+}
+.card-tasks .table-responsive{
+	overflow: initial !important;
+
+}
+.card-tasks .table-full-width{
+	max-height: initial !important;
+}
+b{
+	font-weight: bold !important;
+}
+a.page-link.active{
+	background: #D850D5;
+}
+a.page-link{
+	    padding: 10px 15px;
+}
+.pagination{
+	justify-content: center;
+}
+#loading {
+
+width: 500px;
+height: 500px;
+margin: 5% auto;
+background: url(../images/loader.gif);
+background-size: 40%;
+background-repeat: no-repeat;
+background-position: center;
+
+}
+.checkBoxes,#selectAllBoxes{
+	height: 15px;
+	width: 15px;
+}
+
+.clear{
+	clear: both;
+    font-size: 0;
+    line-height: 0;
+    height: 0;
+}
+.collapse{
+	padding-left: 80px !important;
+	transition: all 0.3s ease;
+}
+
+#uploadStatus{
+	margin-top: 40px;
+}
+#uploadStatus ul{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+#uploadStatus ul li{
+	flex: 0 0 30%;
+	margin-right: 1%;
+	margin-bottom: 1%;
+	list-style: none;
+	position: relative;
+
+}
+#uploadStatus ul li .close_img{
+	top: 0;
+	right: 0;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border: 1px solid white;
+	content: "";
+	position: absolute;
+	cursor: pointer;
+	z-index: 2;
+}
+#uploadStatus ul li:after{
+	position: absolute;
+	top: 2px;
+    right: 11px;
+	content: "x";
+	z-index: 1;
+}
